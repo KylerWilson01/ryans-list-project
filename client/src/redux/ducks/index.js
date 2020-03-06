@@ -1,1 +1,2 @@
-export { default as exampleState } from "./example"
+export { default as homeState } from "./home"
+export { default as subState } from "./subcats"

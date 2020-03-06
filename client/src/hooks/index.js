@@ -1,1 +1,2 @@
-export { useExample } from "../redux/ducks/example"
+export { useHome } from "../redux/ducks/home"
+export { useSubCat } from "../redux/ducks/subcats"
