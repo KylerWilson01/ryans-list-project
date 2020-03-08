@@ -1,0 +1,16 @@
+.cats {
+  width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  margin: auto;
+}
+
+.subcatWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.subcatWrap a {
+  text-decoration: none;
+}

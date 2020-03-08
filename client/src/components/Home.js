@@ -7,13 +7,18 @@ export default props => {
   const { home } = useHome()
 
   return (
-    <div>
+    <div className="cats">
       {home.map(cat => (
-        <div>
+        <div key={"cat-" + cat.id} className="subcatWrap">
           <h3>{cat.name}</h3>
           <div>
             {cat.subcat.map(subcat => (
-              <Link to={'/' + subcat.slug}><p>{subcat.name}</p></Link>
+              <Link
+                key={"subcat-" + subcat.id}
+                to={'/' + subcat.slug + '/' + subcat.id}
+              >
+                <p>{subcat.name}</p>
+              </Link>
             ))}
           </div>
         </div>
