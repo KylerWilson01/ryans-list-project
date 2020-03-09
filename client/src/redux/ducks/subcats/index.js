@@ -22,7 +22,6 @@ export default (state = initialState, action) => {
 function getListings(slug, id) {
   return dispatch => {
     axios.get("/api/categories/" + slug + '/' + id).then(resp => {
-      console.log(resp)
       dispatch({
         type: GET_LISTINGS,
         payload: resp.data

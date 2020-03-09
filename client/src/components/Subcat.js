@@ -26,6 +26,7 @@ export default props => {
 
   return (
     <div className="postingList">
+      <button className="goBack" onClick={e => props.history.goBack()}>Go Back</button>
       <div className="form">
         <p>New Posting: </p>
         <input type="text" placeholder="Title" onInput={e => handleChange(e, 'title')} />

@@ -10,7 +10,8 @@ export default props => {
   }, [props.match.params])
 
   return (
-    <div>
+    <div className="singlePost">
+      <button onClick={e => props.history.goBack()}>Go Back</button>
       {listing.map(post => (
         <div className="post">
           <h1>{post.listingname}</h1>
