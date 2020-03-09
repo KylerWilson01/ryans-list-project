@@ -19,18 +19,25 @@ export default props => {
   }
 
   const handleSubmit = () => {
-    post(form)
+    if (form.title !== '') {
+      post(form)
+    }
   }
 
   return (
-    <div>
-      <div>
+    <div className="postingList">
+      <div className="form">
+        <p>New Posting: </p>
         <input type="text" placeholder="Title" onInput={e => handleChange(e, 'title')} />
         <textarea placeholder="Description" onChange={e => handleChange(e, 'desc')}></textarea>
         <button onClick={handleSubmit}>Submit</button>
       </div>
       {listings.map((post, i) => (
-        <Link to={'/' + prop.slug + '/' + prop.id + '/' + post.id} key={'posting-list-' + i}>
+        <Link
+          to={'/' + prop.slug + '/' + prop.id + '/' + post.id}
+          key={'posting-list-' + i}
+          className="listings"
+        >
           <p>{post.listingname}</p>
         </Link>
       ))}

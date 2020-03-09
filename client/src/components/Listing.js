@@ -7,12 +7,12 @@ export default props => {
 
   useEffect(() => {
     fetchListing(props.match.params.postid)
-  }, [])
+  }, [props.match.params])
 
   return (
     <div>
       {listing.map(post => (
-        <div>
+        <div className="post">
           <h1>{post.listingname}</h1>
           <p>{post.desc}</p>
         </div>

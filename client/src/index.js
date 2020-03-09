@@ -2,6 +2,8 @@ import React from "react"
 import ReactDOM from "react-dom"
 import "./styles/base.css"
 import "./styles/home.css"
+import './styles/listings.css'
+import "./styles/subcat.css"
 import App from "./components/App"
 import * as serviceWorker from "./serviceWorker"
 import { Provider } from "react-redux"
