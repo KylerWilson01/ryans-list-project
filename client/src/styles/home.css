@@ -1,16 +1,35 @@
-.cats {
-  width: 1000px;
+.homePage {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  margin: auto;
+  grid-template-columns: 1fr 2fr;
+  width: 500px;
 }
 
-.subcatWrap {
+.homeTitle {
+  margin: 15px;
+  padding: 10px;
+  width: 200px;
+}
+
+.cats {
+  max-height: 1500px;
+  max-width: 600px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  margin: auto;
+  font-size: 14px;
 }
 
 .subcatWrap a {
   text-decoration: none;
+}
+
+.gray {
+  background: #f4f4f4;
+  border: 1px solid black;
+}
+
+.spacing {
+  padding: 10px 5px;
+  margin: 10px;
 }

@@ -31,7 +31,7 @@ router.get('/categories/:slug/:id', (req, res, next) => {
   let data = {}
 
   const sql = `
-  SELECT c.\`name\`, l.listingname, c.slug, l.id, l.subcat_id
+  SELECT c.\`name\`, l.listingname, c.slug, l.id, l.subcat_id, l.time_created
   FROM categories c 
   RIGHT JOIN listings l 
   ON c.id = subcat_id
@@ -44,7 +44,6 @@ router.get('/categories/:slug/:id', (req, res, next) => {
 })
 
 router.get('/categories/:listingid', (req, res, next) => {
-  console.log(req.params)
   const listing = `${req.params.listingid}`
 
   const sql = `SELECT * FROM listings l WHERE l.id = ?;`
@@ -56,9 +55,9 @@ router.get('/categories/:listingid', (req, res, next) => {
 
 router.post('/categories', (req, res, next) => {
   const form = req.body
-  const sql = `INSERT INTO listings (listingname, subCat_id, \`desc\`) VALUES (?, ?, ?)`
+  const sql = `INSERT INTO listings (listingname, subCat_id, \`desc\`, city, state, price) VALUES (?, ?, ?, ?, ?, ?)`
 
-  conn.query(sql, [form.title, form.subCat_id, form.desc], (err, results, fields) => {
+  conn.query(sql, [form.title, form.subCat_id, form.desc, form.city, form.state, form.price], (err, results, fields) => {
     res.json(results)
   })
 })
